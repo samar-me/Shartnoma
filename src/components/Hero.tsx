@@ -31,7 +31,7 @@ export default function Hero() {
 
           {/* Main Title */}
           <h1 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl font-serif max-w-3xl mx-auto leading-tight">
-            {AGREEMENT_META.title}
+            “{AGREEMENT_META.courseName.toUpperCase()}” — {AGREEMENT_META.title.toUpperCase()}
           </h1>
 
           {/* Short description */}
@@ -90,7 +90,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Compact Actions */}
+        {/* Actions */}
         <div id="intro-actions" className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <button
             onClick={handleScrollToAgreement}
