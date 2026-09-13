@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --paper: #ffffff;
+    --border: #e2e8f0;
+    --muted: #64748b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: var(--foreground);
+    background-color: var(--background);
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Document typography */
+.legal-body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b;
+}
+
+/* Professional Print Stylesheet */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 18mm 15mm 18mm 15mm;
+  }
+
+  *, *:before, *:after {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide website chrome, buttons, headers, footers */
+  header,
+  nav,
+  button,
+  .no-print,
+  #header,
+  #intro-actions,
+  footer {
+    display: none !important;
+  }
+
+  /* Document fills entire page width neatly */
+  .document-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .agreement-section {
+    page-break-inside: auto;
+    break-inside: auto;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+  }
+
+  .agreement-clause {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .signatures-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-top: 2.5rem !important;
+    padding-top: 1.5rem !important;
+    border-top: 2px solid #000000 !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
